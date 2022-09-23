@@ -3,6 +3,11 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes, foreign_key: 'user_id'
 
+  validates :name, presence :true, length: { minimum: 3, maximum: 20 }
+  validates :posts_counter, presence :true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :bio, presence :true, length: { minimum: 3, maximum: 100 }
+  validates :photo, presence :true, length: { minimum: 3, maximum: 100 }
+
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
