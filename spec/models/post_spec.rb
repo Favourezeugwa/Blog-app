@@ -49,4 +49,9 @@ RSpec.describe Post, type: :model do
     post.likes_counter = 2
     expect(post).to be_valid
   end
+
+  it 'updates posts counter after save' do
+    post.save
+    expect(user.posts_counter).to eq(5)
+  end
 end
