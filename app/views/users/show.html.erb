@@ -4,7 +4,6 @@
   <p>TotalPost: <%= @user.posts_counter %></p>
   <p>Created: <%= @user.created_at %></p>
   <p>Updated: <%= @user.updated_at %></>
-
   <% @user.posts.each do |post| %>
     <ul>
       <li><%= link_to post.title, user_post_path(@user, post) %></li>
@@ -13,4 +12,7 @@
       <li>Number of Likes: <%= post.likes_counter %></li>
     </ul>
   <% end %>
+  <button>
+  <%= link_to 'see all posts', user_posts_path(@user) %>
+  </button>
 </section>
