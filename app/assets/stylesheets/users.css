@@ -38,7 +38,6 @@ section {
 }
 
 .user-bio {
-  height: fit-content;
   padding: 10px;
   width: auto;
   border: 2px solid black;
@@ -60,12 +59,4 @@ section {
   display: flex;
   justify-content: flex-end;
   list-style: none;
-}
-
-.see-btn {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
 }
