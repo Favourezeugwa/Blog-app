@@ -19,7 +19,7 @@
         </div>
       </div>
       <ul class='post-comment'>
-        <% post.comments.each do |comment| %>
+        <% post.recent_comments.each do |comment| %>
           <li><%= comment.users.name %>: <%= comment.text %></li>
         <% end %>
       </ul>
