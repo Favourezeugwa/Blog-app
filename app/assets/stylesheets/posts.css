@@ -10,3 +10,8 @@
   margin-top: 1px;
   padding: 10px;
 }
+
+.single-user {
+  display: flex;
+  gap: 30px;
+}

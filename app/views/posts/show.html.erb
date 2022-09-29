@@ -1,5 +1,15 @@
 <section>
-  <h1>Show details in a post</h1>
-  <h3>Post Title: <%= @post.title %></h3>
-  <h4>Post Text: <%= @post.text %></h4>
+  <div class='list-posts'>
+    <h3><%= @post.title %> by <%= @post.users.name %> </h3>
+    <p><%= @post.text %></p>
+    <div class='like-comment'>
+      <li>Comments: <%= @post.comments_counter %>, </li>
+      <li>Likes: <%= @post.likes_counter %></li>
+    </div>
+  </div>
+  <ul class='post-comment'>
+    <% @post.comments.each do |comment| %>
+      <li><%= comment.users.name %>: <%= comment.text %></li>
+    <% end %>
+  </ul>
 </section>
