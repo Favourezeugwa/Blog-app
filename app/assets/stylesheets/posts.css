@@ -1,0 +1,6 @@
+.post-comment {
+  list-style: none;
+  border: 2px solid black;
+  margin-top: 1px;
+  padding: 10px;
+}
