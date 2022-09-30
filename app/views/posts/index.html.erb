@@ -13,14 +13,18 @@
       <div class='list-posts'>
         <h5><%= link_to post.title, user_post_path(@user, post) %></h5>
         <p><%= post.text %></p>
-        <div class='like-comment'>
-          <li>Comments: <%= post.comments_counter %>, </li>
-          <li>Likes: <%= post.likes_counter %></li>
-        </div>
+        <span class='like-comment'>
+          Comments: <%= post.comments_counter || 0 %>, 
+          Likes: <%= post.likes_counter || 0 %> 
+        </span>
       </div>
       <ul class='post-comment'>
-        <% post.recent_comments.each do |comment| %>
-          <li><%= comment.users.name %>: <%= comment.text %></li>
+        <% if post.recent_comments.length == 0 %>
+          <p>No comments added!</p>
+        <% else %>
+          <% post.recent_comments.each do |comment| %>
+            <li><%= comment.users.name %>: <%= comment.text %></li>
+          <% end %>
         <% end %>
       </ul>
     <% end %>

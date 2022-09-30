@@ -58,5 +58,4 @@ section {
 .like-comment {
   display: flex;
   justify-content: flex-end;
-  list-style: none;
 }
