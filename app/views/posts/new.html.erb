@@ -1,10 +1,17 @@
 <h1>New Post</h1>
-<%= form_with model: newpost, url: user_posts_path, method: :post, local: true, scope: :post do |form| %>
-  <%= form.label :Title %><br>
-  <%= form.text_field :title %> 
 
-  <%= form.label :Text %><br>
-  <%= form.text_field :text %>
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
 
-  <%= form.submit "Submit Post" %>
+  <div>
+    <%= form.label :Text %><br>
+    <%= form.text_field :text %>
+  </div>
+
+  <div>
+    <%= form.submit "Submit Post" %>
+  </div>
 <% end %>
