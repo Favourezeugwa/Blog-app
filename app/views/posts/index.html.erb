@@ -27,6 +27,7 @@
             <li><%= comment.users.name %>: <%= comment.text %></li>
           <% end %>
         <% end %>
+        <h5><%= render partial: 'comments/form', locals: {post: post} %>  
       </ul>
     <% end %>
   </div>
