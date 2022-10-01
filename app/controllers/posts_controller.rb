@@ -3,9 +3,9 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  # def new
-  #   @post = Post.new
-  # end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def new
     newpost = Post.new
@@ -13,18 +13,6 @@ class PostsController < ApplicationController
       format.html { render :new, locals: { newpost: newpost } }
     end
   end
-
-  # def create
-  #   @post = Post.new(params[:post])
-  #   @post.user = current_user
-  #   if @post.save
-  #     flash[:success] = 'Thanks for adding new shop.'
-  #     redirect_to user_post_url(@post.user_id, @post.id)
-  #   else
-  #     flash[:error] = 'Error adding review,  please try again.'
-  #     render :new
-  #   end
-  # end
 
   def create
     # new object from params
@@ -46,10 +34,5 @@ class PostsController < ApplicationController
         end
       end
     end
-  end
-
-  def show
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
   end
 end
