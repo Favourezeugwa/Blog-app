@@ -32,7 +32,7 @@ RSpec.describe 'Post Index', type: :feature do
     Like.create(post_id: @post1.id, user_id: @user1.id)
     Like.create(post_id: @post2.id, user_id: @user1.id)
   end
-  
+
   describe 'a post index page' do
     it 'displays the user name' do
       visit user_posts_path(@user1)
@@ -65,7 +65,7 @@ RSpec.describe 'Post Index', type: :feature do
       expect(page).to have_content('Comments: 2, Likes: 1')
       expect(page).to have_content('Comments: 1, Likes: 1')
     end
-    
+
     it 'shows comments in a post' do
       visit user_posts_path(@user1)
       expect(page).to have_content('Hi everytone, nice to meet you!')

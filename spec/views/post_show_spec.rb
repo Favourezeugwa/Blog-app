@@ -33,7 +33,7 @@ RSpec.describe 'Post Show', type: :feature do
     Like.create(post_id: @post1.id, user_id: @user1.id)
     Like.create(post_id: @post1.id, user_id: @user2.id)
   end
-  
+
   describe 'A specific post with title, comments and counter' do
     it 'displays the post title' do
       visit user_post_path(@user1, @post1)
@@ -44,7 +44,7 @@ RSpec.describe 'Post Show', type: :feature do
       visit user_post_path(@user1, @post1)
       expect(page).to have_content('First post by Amarachi')
     end
-    
+
     it 'displays total comments and likes' do
       visit user_post_path(@user1, @post1)
       expect(page).to have_content('Comments: 5, Likes: 2')
