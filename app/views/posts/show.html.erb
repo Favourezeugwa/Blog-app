@@ -12,7 +12,10 @@
       <p>No comments added!</p>
     <% else %>
       <% @post.comments.each do |comment| %>
-        <li><%= comment.users.name %>: <%= comment.text %></li>
+        <li><%= comment.users.name %>: <%= comment.text %> <%= link_to "delete", comment_path(comment), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %></li>
       <% end %>
     <% end %>
   </ul>
