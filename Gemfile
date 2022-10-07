@@ -10,9 +10,9 @@ gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 
 # Add devise gem
+gem 'cancancan'
 gem 'devise'
 gem 'letter_opener'
-gem 'cancancan'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
