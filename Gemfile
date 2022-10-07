@@ -10,6 +10,7 @@ gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 
 # Add devise gem
+gem 'cancancan'
 gem 'devise'
 gem 'letter_opener'
 
