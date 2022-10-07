@@ -12,18 +12,31 @@
       <p>No comments added!</p>
     <% else %>
       <% @post.comments.each do |comment| %>
-        <li><%= comment.users.name %>: <%= comment.text %> <%= link_to "delete", comment_path(comment), data: {
-          turbo_method: :delete,
-          turbo_confirm: "Are you sure?"
-        } %></li>
+        # <li>
+        # <%= comment.users.name %>: <%= comment.text %> 
+        # <% if can? :destroy, comment %>
+        #   <%= link_to "delete", comment_path(comment), data: {
+        #     turbo_method: :delete,
+        #     turbo_confirm: "Are you sure?"
+        #   } %>
+        # <% end %>
+        # </li>
       <% end %>
     <% end %>
   </ul>
   <ul>
-    <li><%= link_to "Edit post", edit_post_path(@post) %></li>
-    <li><%= link_to "Delete post", post_path(@post), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure you want to delete this post?"
-                  } %></li>
+    # <li>
+    #   <% if can? :update, @post %>
+    #     <%= link_to "Edit post", edit_post_path(@post) %>
+    #   <% end %>
+    # </li>
+    # <li>
+    #   <% if can? :destroy, @post %>
+    #     <%= link_to "Delete post", post_path(@post), data: {
+    #                     turbo_method: :delete,
+    #                     turbo_confirm: "Are you sure you want to delete this post?"
+    #                   } %>
+    #   <% end %>
+    # </li>
   </ul>
 </section>
