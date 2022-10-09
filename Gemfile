@@ -32,6 +32,11 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'rabl'
+# Also add either `oj` or `yajl-ruby` as the JSON parser
+# If using `oj`, Rabl will set the mode to :compat
+gem 'jwt'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

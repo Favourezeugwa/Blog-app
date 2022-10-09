@@ -6,10 +6,17 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'user_id'
   has_many :comments
   has_many :likes, foreign_key: 'user_id'
+  after_create :generate_api_token
 
   validates :name, presence: true, length: { minimum: 3, maximum: 20 }
 
   def recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  private
+  def generate_api_token
+    self.api_token = Devise.friendly_token
+    self.save
   end
 end

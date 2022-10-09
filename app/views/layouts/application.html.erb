@@ -25,6 +25,7 @@
         <strong><%= current_user.name%></strong>. 
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "GET YOUR API TOKEN", api_token_user_path(current_user) if current_user.present?%>
       <% else %> 
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> 
         <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
